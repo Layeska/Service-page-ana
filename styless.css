@@ -61,7 +61,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--subtitle) !important;
+  font-size: var(--subtitle);
 }
 
 h1 span {
@@ -78,6 +78,12 @@ header {
   padding: 2.5rem 0;
 }
 
+@media (max-width: 43rem) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
 /*utilidades*/
 .center {
   text-align: center;
@@ -87,13 +93,6 @@ header {
 
 .container {
   width: 120rem;
-}
-
-.main-nav {
-  margin: auto;
-  background: var(--dark);
-  display: flex;
-  justify-content: space-between;
 }
 
 /*Los elemntos en linea no heredan las propiedades del box model*/
@@ -110,6 +109,7 @@ header {
   padding: 1rem;
   font-weight: 700;
   font-size: 2rem;
+  width: 100%;
 }
 
 .main-nav a:hover {
@@ -130,6 +130,31 @@ nav a:nth-child(2n) { agarra elementos pares
 
 .nav-bg {
   background: var(--dark);
+}
+
+/* Mobile first - Cuando maquetemos la pag se enfoca primero de como se mire en un dispositivo pequeño
+y luego ir ampliando el tamaño de la pantalla
+
+Desktop First - lo de arriba al reves
+*/
+
+@media (max-width: 83rem) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 42rem) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /*Tocando el Hero*/
@@ -182,6 +207,21 @@ nav a:nth-child(2n) { agarra elementos pares
   text-transform: uppercase;
 }
 
+@media (max-width: 43rem) {
+  .hero-subtitle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  .btn {
+    width: 90%;
+    text-align: center;
+  }
+}
+
 .shadow {
   margin: auto;
   background: var(--white);
@@ -196,20 +236,14 @@ nav a:nth-child(2n) { agarra elementos pares
   align-items: center;
 }
 
-.services {
+.services-cards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1rem;
 }
 
 .services-cards h3 {
   color: var(--primary);
   font-weight: 400;
-}
-
-.services-cards {
-  display: flex;
-  gap: 1rem;
 }
 
 .card {
@@ -230,6 +264,12 @@ nav a:nth-child(2n) { agarra elementos pares
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 43rem) {
+  .services-cards {
+    flex-direction: column;
+  }
 }
 
 .form-container {
@@ -303,4 +343,22 @@ textarea {
 
 footer p {
   text-align: center;
+}
+
+@media (max-wigth: 43rem) {
+  form {
+    width: 100%;
+  }
+
+  fieldset {
+    width: 100%;
+  }
+
+  .form-section1 {
+    flex-direction: column;
+  }
+
+  .half-width {
+    width: 100%;
+  }
 }
