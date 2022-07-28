@@ -160,7 +160,7 @@ Desktop First - lo de arriba al reves
 /*Tocando el Hero*/
 
 .hero {
-  background-image: url("../Proyecto_Ana/img/fondo1.jpg");
+  background-image: url("./img/fondo1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center; /*Eje X y el eje Y*/
